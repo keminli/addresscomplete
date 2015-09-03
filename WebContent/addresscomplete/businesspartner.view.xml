@@ -1,0 +1,43 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+     xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+   controllerName="addresscomplete.businesspartner" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title">
+		<content>
+		<l:Grid
+    defaultSpan="L12 M12 S12"
+    width="auto">
+    <l:content>
+      <f:SimpleForm id="idSimpleFormChange1"
+        minWidth="1024"
+        maxContainerCols="2"
+        editable="true"
+        layout="ResponsiveGridLayout"
+        title="Address"
+        labelSpanL="3"
+        labelSpanM="3"
+        emptySpanL="4"
+        emptySpanM="4"
+        columnsL="1"
+        columnsM="1">
+        <f:content>
+          <Label text="Name" />
+          <Input id="idName" />
+          <Label text="Address" />
+          <Input id="idAddress" type="Text" 
+			showSuggestion="true" suggest="onAddressTyped" suggestionItems="{/results}"
+			suggestionItemSelected="onAddressSelected">
+			<suggestionItems>
+				<core:Item text="{formatted_address}" />
+			</suggestionItems>
+		</Input>
+        <Label text="Email" />
+          <Input value="{Email}" />
+         <Label text="Phone No." />
+          <Input value="{phone}" />
+        </f:content>
+      </f:SimpleForm>
+    </l:content>
+  </l:Grid>		
+		</content>
+	</Page>
+</core:View>
